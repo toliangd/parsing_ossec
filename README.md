@@ -1,0 +1,1 @@
+# парсинг информации о хостах ossec (id,name,ip,condition)
