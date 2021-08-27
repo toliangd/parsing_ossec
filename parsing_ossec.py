@@ -1,6 +1,6 @@
 # dict = {'id': {'Name':[], 'IP':[], 'Condition':[]}}
-dict = {}
-list = ['ID: 10, Name: ss-n-02, IP: 0.6.9.4, Active',\
+dct = {}
+lst = ['ID: 10, Name: ss-n-02, IP: 0.6.9.4, Active',\
         'ID: 11, Name: Sds, IP: 1.6.1.5, Active',\
         'ID: 12, Name: Sps-01, IP: 1.6.9.6, Active',\
         'ID: 14, Name: vm-2, IP: 0.9.8.5, Active',\
@@ -9,8 +9,8 @@ list = ['ID: 10, Name: ss-n-02, IP: 0.6.9.4, Active',\
         'ID: 17, Name: vm-2, IP: 2.1.4.4, Active]']
 
 
-def param(list):
-    for i in list:
+def param(lst):
+    for i in lst:
         blank_1 = i.split(", ")
         for j in blank_1:
             blank_2 = j.split(": ")
@@ -26,10 +26,27 @@ def param(list):
 
 
 def dict1(a,b,c,d):
-    dict[a] = {'Name':[],'IP':[],'Condition':[]}
-    dict[a]['Name'].append(b)
-    dict[a]['IP'].append(c)
-    dict[a]['Condition'].append(d)
+    dct[a] = {'Name':[],'IP':[],'Condition':[]}
+    dct[a]['Name'].append(b)
+    dct[a]['IP'].append(c)
+    dct[a]['Condition'].append(d)
 
-param(list)
-print(dict)
+def all_id(lst):
+    param(lst)
+    return(list(dct.keys()))
+
+def all_ip(lst):
+    param(lst)
+    list_ip = []
+    for i in list(dct.keys()):
+        list_ip.append(dct[i]['IP'])
+    return list_ip
+
+def all_name(lst):
+    param(lst)
+    list_name = []
+    for i in list(dct.keys()):
+        list_name.append(dct[i]['Name'])
+    return list_name
+
+all_ip(lst)
